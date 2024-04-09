@@ -1,0 +1,69 @@
+@import '/src/assets/sass/colors';
+@import '/src/assets/sass/fonts';
+@import '/src/assets/sass/keyframes';
+@import '/src/assets/sass/mixins';
+
+
+// Code ------------------------------------------------------------------------
+@media screen and (min-width:1024px) {
+    footer {
+        gap: 8rem;
+        padding: 8rem 4rem;
+        height: auto;
+
+        .footer-container {
+            gap: 8rem;
+            width: 100%;
+            max-width: 1280px;
+            height: 100%;
+
+            .top-block {
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 0;
+    
+                .footer__logo {
+                    place-content: start;
+    
+                    figure {
+                        .logo__1 {
+                            display: none;
+                        }
+        
+                        .logo__2 {
+                            display: block;
+                            width: 180px;
+                        }
+                    }
+                }
+    
+                .regulation {
+                    align-content: start;
+                }
+    
+                .social-networks {
+                    place-content: start;
+                    justify-content: end;
+    
+                    .social-networks__icons {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+    
+            .button-block {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0;
+    
+                .copyright {
+                    justify-content: start;
+                    text-align: start;
+                }
+    
+                .links {
+                    justify-content: end;
+                    text-align: end;
+                }
+            }
+        }
+    }
+}

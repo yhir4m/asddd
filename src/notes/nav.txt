@@ -1,0 +1,17 @@
+Estructura del nav
+
+Logo
+--------------------
+Navegacion
+-btn:oferta educativa
+-btn:campus
+-btn:noticias
+-btn: acerca de
+-btn: contactanos
+--------------------
+-btn: plataforma virtual
+--------------------
+
+
+Botón de plataforma virtual
+https://uiverse.io/Gaurav-WebDev/tame-hound-72

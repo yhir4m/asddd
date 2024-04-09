@@ -1,0 +1,13 @@
+@import '/src/assets/sass/colors';
+@import '/src/assets/sass/fonts';
+@import '/src/assets/sass/keyframes';
+@import '/src/assets/sass/mixins';
+
+
+// Code ------------------------------------------------------------------------
+@media screen and (min-width:768px) {
+    footer {
+        min-height: calc(100vh - 6rem);
+        height: auto;
+    }
+}

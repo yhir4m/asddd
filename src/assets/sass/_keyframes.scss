@@ -1,0 +1,72 @@
+// Mobile menu -----------------------------------------------------------------
+
+
+@keyframes animation1-menu_button {
+    0% {
+      transform: translateY(8px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(45deg);
+    }
+  }
+@keyframes animation2-menu_button {
+    0% {
+      transform: translateY(-8px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(-45deg);
+    }
+}
+
+@keyframes displayLayer {
+  from{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes hideLayer {
+  from{
+    transform: translateY(0);
+
+  }
+  to{
+    transform: translateY(-150%);
+
+  }
+} 
+
+@keyframes logoAppear {
+  from{
+    transform: translateY(-100%)
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+
+
+
+// Footer ----------------------------------------------------------------------
+@keyframes docs {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(-15%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}

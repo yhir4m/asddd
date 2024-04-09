@@ -1,0 +1,261 @@
+@import '/src/assets/sass/colors';
+@import '/src/assets/sass/fonts';
+@import '/src/assets/sass/keyframes';
+@import '/src/assets/sass/mixins';
+
+
+// Code ------------------------------------------------------------------------
+
+
+//la etiqueta a funciona para los links
+.navigations__container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+
+    .navigation__mobile{
+        .navbar{
+            @include navbar-styles;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            z-index: 10000;
+
+            .navbar__ideen-buttons{
+                @include center-all;
+                justify-content: start;
+                
+                .logo{
+                    @include logo-button;
+
+                    .logo__mainImage{
+                        animation: logoAppear 0.4s ease;
+                    }
+
+                    .logo__layerImage{
+                        animation: logoAppear 0.4s ease;
+                        display: none;
+                    }
+                }
+
+                .community{
+                    display: none;
+                }
+            }
+            
+            .burger-icon {
+                @include center-all;
+                justify-content: end;
+                    .burger{
+                        width: 4rem;
+                        height: 4rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        user-select: none;
+                        cursor: pointer;
+                        transition: 300ms;
+                        border-radius: 10px;
+
+                        input{
+                            appearance: none;
+                            transition: 300ms;
+                        }
+                        &::before{
+                            content: "";
+                            transition: 300ms;
+                            transform-origin: center center;
+                            transform: translateY(8px);
+                            width: 25px;
+                            height: 2.1px;
+                            display: block;
+                            background-color: rgb(255, 0, 0);
+                            border-radius: 5px;
+                            position: absolute;
+                        }
+                        &::after{
+                            content: "";
+                            transition: 300ms;
+                            transform-origin: center center;
+                            transform: translateY(-8px);
+                            width: 25px;
+                            height: 2.1px;
+                            display: block;
+                            background-color: rgb(255, 0, 0);
+                            border-radius: 5px;
+                            position: absolute;
+                        }
+
+                        .line{
+                            width: 25px;
+                            height: 2.1px;
+                            display: block;
+                            background-color: rgb(255, 0, 0);
+                            border-radius: 5px;
+                            position: absolute;
+                            &:checked{
+                                width: 0;
+                                transition-delay: 100ms;
+                            }
+                        }
+
+                        &:has(.line:checked)::before{
+                            animation: animation1-menu_button 400ms ease-out 0s 1 both;
+                        }
+                        &:has(.line:checked)::after{
+                            animation: animation2-menu_button 400ms ease-out 0s 1 both;
+                        }
+
+                        &:hover{
+                            background: #aeaeae;
+                            border-radius: 50%;
+                            .line, &::before , &::after{
+                                background: #e8e8e8;
+                            }
+                        }
+
+                        &:active{
+                            scale: 0.95;
+                        }
+                    }
+            }
+        }
+
+        .navigation__layer {
+            display: none;
+        }
+
+        .navbarLayer{ 
+            background-color: transparent;
+
+        }
+
+        .layerActive {
+            flex: 1;
+            position: absolute;
+            top: 0;
+            @include flexbox(column,start,start,null);
+            width: 100%;
+            height: 100vh;
+            background: $dark;
+            background: $layer-gradient;
+            z-index: -1;
+            padding: 6rem 2%;
+            
+            
+            .layer__links{
+                width: 100%;
+                margin: 5% 0;
+                @include flexbox(row,start,space-evenly,null);
+
+                
+                .links__container{
+                    @include flexbox(column,start,space-evenly,2px);
+                    align-items: flex-start;
+                    margin: 2% 0;
+                    div{
+                        text-align:center;
+                        transition: all 1s ease;
+                        
+
+                        a{
+                            transition: all 0.8s ease;
+                            padding-right: 4rem;
+                            font-size: 2.4rem;
+                            width: 100%;
+                            height: 100%;
+                            color: $light;
+                            border-right: transparent solid 2px;
+                            &:hover{
+                                padding-left: 3rem;
+                                padding-right: 1rem;
+                            }
+                        }
+
+                        
+                    }
+                    
+                    
+                }
+
+                .list__extend{
+                    @include flexbox(column,start,space-evenly,null);
+                    flex: 1;
+                    align-items: flex-start;
+                    margin: 2% 2%;
+
+                    a{
+                        transition: all 0.8s ease;
+                        font-size: 1.2rem;
+                        color: $light;
+                        border-bottom: transparent solid 2px;
+                        padding: 5% 0;
+                        &:hover{
+                            border-color: $light;
+                            padding-left: 2rem;
+                        }
+                    }
+                    .extend__oferta-educativa{
+                        @include flexbox(column,start,space-evenly,5%);
+
+                        
+                    }
+                    .extended{
+                        display: none;
+                    }
+                }
+
+                
+                
+                
+                
+
+                
+
+                .link__ofertaEducativa{
+                    display: flex;
+                    &:hover{
+                        .list__extend{
+
+                            opacity: 1;
+                            @include flexbox(column,start,space-evenly,8px);
+                            flex-wrap: wrap;
+                            a{
+                                font-size: 1.2rem;
+                                &:hover{
+                                    padding-left: 2rem;
+                                    border-bottom: #fff 2px solid;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                
+                
+            }
+
+            .community__container{
+                padding: 4rem;
+                border-top: solid $light 2px;
+                width: 100%;
+                @include center-all;
+
+                .community{
+                    @include community-button;
+                }
+            }
+
+            .community {
+                display: none;
+            }
+        }
+    }
+
+
+    .navigation__desktop {
+        display: none;
+    }
+}

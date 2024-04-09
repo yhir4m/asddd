@@ -1,0 +1,46 @@
+@import '/src/assets/sass/colors';
+@import '/src/assets/sass/fonts';
+@import '/src/assets/sass/keyframes';
+@import '/src/assets/sass/mixins';
+
+
+// Code ------------------------------------------------------------------------
+@media screen and (min-width:768px) {
+    .navigations__container {
+        .navigation__desktop {
+            display: none;
+        }
+
+        .navigation__mobile {
+            .navbar {
+                @include navbar-styles;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                .navbar__ideen-buttons {
+                    @include flexbox(row, center, flexstart, 3.2rem);
+
+                    .logo {
+                        @include logo-button;
+                    }
+
+                    .community {
+                        @include community-button;
+                    }
+                }
+
+                .navbar__menu-button {
+                    @include center-all;
+                    justify-content: end;
+                    color: #4FAE32;
+                    color: #35AA3E;
+                    color: #011E41;
+                }
+            }
+
+            .navbar__items {
+                display: none;
+            }
+        }
+    }
+}

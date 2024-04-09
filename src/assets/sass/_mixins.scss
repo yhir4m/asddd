@@ -1,0 +1,107 @@
+// Display ---------------------------------------------------------------------
+@mixin flexbox($direction, $align-items, $justify-content, $gap) {
+    display: flex;
+    flex-direction: $direction, null;
+    align-items: $align-items, null;
+    justify-content: $justify-content, null;
+    gap: $gap, null;
+}
+
+@mixin center-all {
+    display: grid;
+    place-content: center;
+}
+
+
+// Components ------------------------------------------------------------------
+@mixin navbar-styles {
+    width: 100%;
+    height: 60px;
+    padding: 0 2%;
+    background-color: $light;
+    box-shadow: 
+        #00000029 0px 2px 4px, 
+        #0000003b 0px 2px 4px;
+}
+
+@mixin logo-button {
+    @include center-all;
+    justify-content: start;
+            
+    figure {
+        height: 6rem;
+            
+        a {
+            @include center-all;
+            height: inherit;
+            
+            img {
+                height: 5.2rem;
+            }
+        }
+    }
+}
+
+@mixin community-button {
+    @include center-all;
+    justify-content: end;
+
+    a {
+        @include center-all;
+        position: relative;
+        width: 20rem;
+        height: 4rem;
+        border-radius: 0.8rem;
+        background-color: $blue;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+
+        span {
+            font-size: 1.6rem;
+            font-family: 'Poppins-600', serif;
+            color: $white;
+        }
+    }
+
+    .effect {
+        &::after {
+            content: "Entrar";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(5rem);
+            @include flexbox(null, center, center, null);
+            width: 20rem;
+            height: 4rem;
+            background-color: $institutional-green;
+            font-size: 1.6rem;
+            font-family: 'Poppins-600', serif;
+            color: $blue;
+            transition: all 0.4s ease-in-out;
+        }
+
+        &::before {
+            content: "Plataforma Virtual";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(0px) scale(1.2);
+            @include flexbox(null, center, center, null);
+            width: 20rem;
+            height: 4rem;
+            background-color: $institutional-blue;
+            font-size: 1.6rem;
+            font-family: 'Poppins-600', serif;
+            color: $white;
+            transition: all 0.4s ease-in-out;
+        }
+
+        &:hover::after {
+            transform: translateY(0) scale(1.2);
+        }
+
+        &:hover::before {
+            transform: translateY(-50px) scale(0) rotate(120deg);
+        }
+    }
+}

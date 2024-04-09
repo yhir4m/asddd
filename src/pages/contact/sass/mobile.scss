@@ -1,0 +1,42 @@
+@import '../../../../src/assets/sass/colors';
+@import '../../../../src/assets/sass/fonts';
+@import '../../../../src/assets/sass/keyframes';
+@import '../../../../src/assets/sass/mixins';
+
+
+
+.contact-pages {
+    .map-container  {
+        width: 100%;
+        height: auto;
+        
+
+        iframe {
+            width: 100%;
+            height: 60vh;
+            border: 0;
+        }
+
+    }
+
+    .contact-form {
+        width: 100%;
+        height: 28vh;
+        @include flexbox(null,center,center,null);
+        position: relative;
+
+        article {
+            position: absolute;
+            top: -10.7rem;
+            width: 92%;
+            max-width: 1280px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+             background-color: aqua;
+            display: grid;
+            grid-template-rows: auto auto ;
+        }
+
+    }
+
+}

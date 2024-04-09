@@ -1,0 +1,15 @@
+
+carrusel
+
+informacion general
+    min 3 secciones
+
+niveles educativos
+    -preparatoria
+    -licenciatura
+    -maestria
+
+
+patrocinadores
+
+
